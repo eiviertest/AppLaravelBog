@@ -4,7 +4,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\PersonaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +37,6 @@ Route::get('create-blog', [BlogPostController::class, 'create']);
 Route::post('store-blog-form', [BlogPostController::class, 'store']);
 
 //User routes
-Route::get('create-user', [UserController::class, 'create']);
-Route::get('all-users', [UserController::class, 'index']);
+Route::get('create-persona', [PersonaController::class, 'create']);
+Route::get('all-personas', [PersonaController::class, 'index']);
+Route::post('post-persona-form', [PersonaController::class, 'store']);

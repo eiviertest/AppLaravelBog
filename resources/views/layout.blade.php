@@ -122,12 +122,12 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Users</span>
+                <span>Personas</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
 
-                <a class="dropdown-item" href="{{ URL::to('create-user') }}"> Create a User</a>
-                <a class="dropdown-item" href="{{ URL::to('all-users') }}"> All Users </a>
+                <a class="dropdown-item" href="{{ URL::to('create-persona') }}"> Crear una persona</a>
+                <a class="dropdown-item" href="{{ URL::to('all-personas') }}"> Todas las personas </a>
 
             </div>
         </li>
