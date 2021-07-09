@@ -27,27 +27,42 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Category Name</th>
-                      <th>Actions</th>
+                      <th>Nombre</th>
+                      <th>Apellido Paterno</th>
+                      <th>Apellido Materno</th>
+                      <th>Edad</th>
+                      <th>Sexo</th>
+                      <th>Estado civil</th>
+                      <th>Acción</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Category Name</th>
-                      <th>Actions</th>
+                      <th>Nombre</th>
+                      <th>Apellido Paterno</th>
+                      <th>Apellido Materno</th>
+                      <th>Edad</th>
+                      <th>Sexo</th>
+                      <th>Estado civil</th>
+                      <th>Acción</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                     @foreach ($users as $user)  
+                     @foreach ($personas as $persona)  
                     <tr>
-                      <td> {{$user->name}}<br /></td>
+                      <td> {{$persona->nombre}}<br /></td>
+                      <td> {{$persona->apellido_paterno}}<br /></td>
+                      <td> {{$persona->apellido_materno}}<br /></td>
+                      <td> {{$persona->edad}}<br /></td>
+                      <td> {{$persona->sexo}}<br /></td>
+                      <td> {{$persona->estado_civil}}<br /></td>
                       <td>
-                          <a href="{{URL::to('edit-user')}}/{{$user->id}}" class="btn btn-outline-primary btn-sm">Edit</a>
+                          <a href="{{URL::to('edit-persona')}}/{{$persona->id}}" class="btn btn-outline-primary btn-sm">Editar</a>
                           |
-                          <a href="{{URL::to('delete-user')}}/{{$user->id}}" 
+                          <a href="{{URL::to('delete-persona')}}/{{$persona->id}}" 
                             class="btn btn-outline-danger btn-sm"
                             onclick="return checkDelete();"
-                            >Delete</a>
+                            >Eliminar</a>
                       </td>
                     </tr>
                     @endforeach
@@ -67,10 +82,5 @@
     }
 
 </script>
-
-         
-
-   
-       
     
 @stop
