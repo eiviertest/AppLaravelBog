@@ -74,7 +74,7 @@
           </div>
 <script>
     function checkDelete(){
-        var check = confirm('Are you sure you want DELETE this?');
+        var check = confirm('¿Estás seguro de eliminar el registro?');
         if(check){
             return true;
         }

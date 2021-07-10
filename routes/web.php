@@ -40,3 +40,5 @@ Route::post('store-blog-form', [BlogPostController::class, 'store']);
 Route::get('create-persona', [PersonaController::class, 'create']);
 Route::get('all-personas', [PersonaController::class, 'index']);
 Route::post('post-persona-form', [PersonaController::class, 'store']);
+Route::get('delete-persona/{id}', [PersonaController::class, 'destroy']);
+
