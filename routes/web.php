@@ -41,4 +41,6 @@ Route::get('create-persona', [PersonaController::class, 'create']);
 Route::get('all-personas', [PersonaController::class, 'index']);
 Route::post('post-persona-form', [PersonaController::class, 'store']);
 Route::get('delete-persona/{id}', [PersonaController::class, 'destroy']);
+Route::get('edit-persona/{id}', [PersonaController::class, 'edit']);
+Route::post('update-persona-form/{id}', [PersonaController::class, 'update']);
 

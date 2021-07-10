@@ -50,25 +50,15 @@ class PersonaController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Persona  $persona
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Persona $persona)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Persona  $persona
      * @return \Illuminate\Http\Response
      */
-    public function edit(Persona $persona)
+    public function edit($id)
     {
-        //
+        $persona =  Persona::find($id);
+        return view('persona.editar', compact('persona'));
     }
 
     /**
@@ -78,9 +68,19 @@ class PersonaController extends Controller
      * @param  \App\Models\Persona  $persona
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Persona $persona)
+    public function update(Request $request, $id)
     {
-        //
+        $persona =  Persona::find($id);
+        $persona->nombre = $request->input('personaNombre');
+        $persona->apellido_paterno = $request->input('personaApellidoP');
+        $persona->apellido_materno = $request->input('personaApellidoM');
+        $persona->edad = $request->input('personaEdad');
+        $persona->sexo = $request->input('personaSexo');
+        $persona->estado_civil = $request->input('personaEstadoCivil');
+        if($persona->update()){
+            return redirect()->back()->with('success', 'Updated successfully');
+        }
+        return redirect()->back()->with('failed', 'Could not update!');
     }
 
     /**
