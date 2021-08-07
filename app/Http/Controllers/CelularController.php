@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Celular;
 use Illuminate\Http\Request;
 
 class CelularController extends Controller
@@ -13,7 +14,8 @@ class CelularController extends Controller
      */
     public function index()
     {
-        //
+        $celulares = Celuar::all();
+        return view('celular.index', compact('celulares'));
     }
 
     /**
@@ -23,7 +25,7 @@ class CelularController extends Controller
      */
     public function create()
     {
-        //
+        return view('persona.create');
     }
 
     /**
@@ -34,18 +36,16 @@ class CelularController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $celular = new Celular();
+        $celular->modelo = $request->input('modelo');
+        $celular->marca = $request->input('marca');
+        $celular->capacidad_bateria = $request->input('capacidad_bateria');
+        $celular->total_camaras = $request->input('total_camaras');
+        $celular->color = $request->input('color');
+        if($celular->save()){
+            return redirect()->back()->with('success', 'Saved successfully');
+        }
+        return redirect()->back()->with('failed', 'Could not saved!');
     }
 
     /**
@@ -56,7 +56,8 @@ class CelularController extends Controller
      */
     public function edit($id)
     {
-        //
+        $celular =  Celular::find($id);
+        return view('celular.editar', compact('celular'));
     }
 
     /**
@@ -68,7 +69,16 @@ class CelularController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $celular =  Celular::find($id);
+        $celular->modelo = $request->input('modelo');
+        $celular->marca = $request->input('marca');
+        $celular->capacidad_bateria = $request->input('capacidad_bateria');
+        $celular->total_camaras = $request->input('total_camaras');
+        $celular->color = $request->input('color');
+        if($celular->update()){
+            return redirect()->back()->with('success', 'Updated successfully');
+        }
+        return redirect()->back()->with('failed', 'Could not update!');
     }
 
     /**
@@ -79,6 +89,9 @@ class CelularController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Celular::destroy($id)) {
+            return redirect()->back()->with('deleted', 'Deleted successfully');
+        }
+        return redirect()->back()->with('delete-failed', 'Could not delete');
     }
 }
