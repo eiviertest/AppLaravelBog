@@ -15,6 +15,11 @@ class CreateCelularsTable extends Migration
     {
         Schema::create('celulars', function (Blueprint $table) {
             $table->id();
+            $table->string('modelo', 60);
+            $table->string('marca', 60);
+            $table->integer('capacidad_bateria');
+            $table->integer('total_camaras');
+            $table->string('color', 40);
             $table->timestamps();
         });
     }
