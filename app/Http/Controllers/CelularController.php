@@ -25,7 +25,7 @@ class CelularController extends Controller
      */
     public function create()
     {
-        return view('persona.create');
+        return view('celular.create');
     }
 
     /**

@@ -1,6 +1,6 @@
 @extends('layout')
 @section('dashboard-content')
-    <h1>Formulario para registrar una persona</h1>
+    <h1>Formulario para registrar un celular</h1>
         @if (Session::get('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert" id="gone">
                 <strong>{{Session::get('success')}}</strong>
@@ -18,91 +18,38 @@
         </div>
     @endif            
 
-        <form action="{{URL::to('post-persona-form')}}" method="post">
+        <form action="{{URL::to('post-celular-form')}}" method="post">
             @csrf
             <div class="form-group">
-              <label for="personaNombre">Nombre (s)</label>
-              <input type="text" class="form-control" id="personaNombre" 
-               placeholder="Ingrese el nombre"
-              name="personaNombre">            
+              <label for="modelo">Modelo</label>
+              <input type="text" class="form-control" id="modelo" 
+               placeholder="Ingrese el modelo"
+              name="modelo">            
+            </div>
+
+            <div class="form-group">
+              <label for="marca">Marca</label>
+              <input type="text" class="form-control" id="marca" 
+               placeholder="Ingrese la marca"
+              name="marca">            
             </div>
             <div class="form-group">
-              <label for="personaApellidoP">Apellido Paterno</label>
-              <input type="text" class="form-control" id="personaApellidoP" 
-               placeholder="Ingrese el apellido paterno"
-              name="personaApellidoP">            
+              <label for="capacidad_bateria">Capacidad de bateria (mA)</label>
+              <input type="number" class="form-control" id="capacidad_bateria" 
+               placeholder="Ingrese la capacidad de bateria"
+              name="capacidad_bateria">            
             </div>
             <div class="form-group">
-              <label for="personaApellidoM">Apellido Materno</label>
-              <input type="text" class="form-control" id="personaApellidoM" 
-               placeholder="Ingrese el apellido materno"
-              name="personaApellidoM">            
+                <label for="total_camaras">Total de camaras</label>
+                <input type="number" min="1" max="10" class="form-control" id="total_camaras" 
+                placeholder="Ingrese la cantidad de camaras"
+                name="total_camaras">    
             </div>
             <div class="form-group">
-                <label for="personaEstadoCivil">Estado civil</label>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="personaEstadoCivil" id="personaEstadoCivil" checked value="Soltero">
-                            <label class="form-check-label" for="personaEstadoCivil">
-                                Soltero
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="personaEstadoCivil" id="personaEstadoCivil" value="Casado">
-                            <label class="form-check-label" for="personaEstadoCivil">
-                                Casado
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="personaEstadoCivil" id="personaEstadoCivil" value="Viudo">
-                            <label class="form-check-label" for="personaEstadoCivil">
-                                Viudo
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="personaEstadoCivil" id="personaEstadoCivil" value="Divorciado">
-                            <label class="form-check-label" for="personaEstadoCivil">
-                                Divorciado
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputEstadoCivil">Edad</label>
-                <input type="number" min="5" max="80" class="form-control" id="personaEdad" 
-                placeholder="Ingrese la edad"
-                name="personaEdad">    
-            </div>
-            <div class="form-group">
-                <label for="personaSexo">Sexo</label>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="personaSexo" id="personaSexo" checked value="Masculino">
-                                <label class="form-check-label" for="personaSexo">
-                                    Masculino
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="personaSexo" id="personaSexo" value="Femenino">
-                                <label class="form-check-label" for="personaSexo">
-                                    Femenino
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <label for="color">Color</label>
+                <input type="text" class="form-control" id="color" 
+                placeholder="Ingrese el color"
+                name="color">    
             </div>
             <button type="submit" class="btn btn-primary mt-3">Enviar</button>
            
