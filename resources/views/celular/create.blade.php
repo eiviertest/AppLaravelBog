@@ -21,23 +21,22 @@
         <form action="{{URL::to('post-celular-form')}}" method="post">
             @csrf
             <div class="form-group">
-              <label for="modelo">Modelo</label>
-              <input type="text" class="form-control" id="modelo" 
-               placeholder="Ingrese el modelo"
-              name="modelo">            
-            </div>
-
-            <div class="form-group">
-              <label for="marca">Marca</label>
-              <input type="text" class="form-control" id="marca" 
-               placeholder="Ingrese la marca"
-              name="marca">            
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" 
+                    placeholder="Ingrese el modelo"
+                    name="modelo">            
             </div>
             <div class="form-group">
-              <label for="capacidad_bateria">Capacidad de bateria (mA)</label>
-              <input type="number" class="form-control" id="capacidad_bateria" 
-               placeholder="Ingrese la capacidad de bateria"
-              name="capacidad_bateria">            
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca" 
+                    placeholder="Ingrese la marca"
+                    name="marca">            
+            </div>
+            <div class="form-group">
+                <label for="capacidad_bateria">Capacidad de bateria (mA)</label>
+                <input type="number" class="form-control" id="capacidad_bateria" 
+                    placeholder="Ingrese la capacidad de bateria"
+                    name="capacidad_bateria">            
             </div>
             <div class="form-group">
                 <label for="total_camaras">Total de camaras</label>
@@ -52,6 +51,5 @@
                 name="color">    
             </div>
             <button type="submit" class="btn btn-primary mt-3">Enviar</button>
-           
-          </form>
+        </form>
 @stop
