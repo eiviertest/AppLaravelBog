@@ -17,6 +17,7 @@
 </div>
 @endif
     <div id="content-wrapper">
+     <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
@@ -26,26 +27,39 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Modelo</th>
-                      <th>Marca</th>
-                      <th>Capacidad de bateria mA</th>
-                      <th>Total de camaras</th>
-                      <th>Color</th>
+                      <th>Nombre</th>
+                      <th>Apellido Paterno</th>
+                      <th>Apellido Materno</th>
+                      <th>Edad</th>
+                      <th>Sexo</th>
+                      <th>Estado civil</th>
                       <th>Acción</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    @foreach ($celulares as $celular)  
+                  <tfoot>
                     <tr>
-                      <td> {{$celular->modelo}}<br /></td>
-                      <td> {{$celular->marca}}<br /></td>
-                      <td> {{$celular->capacidad_bateria}}<br /></td>
-                      <td> {{$celular->total_camaras}}<br /></td>
-                      <td> {{$celular->color}}<br /></td>
+                      <th>Nombre</th>
+                      <th>Apellido Paterno</th>
+                      <th>Apellido Materno</th>
+                      <th>Edad</th>
+                      <th>Sexo</th>
+                      <th>Estado civil</th>
+                      <th>Acción</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                     @foreach ($personas as $persona)  
+                    <tr>
+                      <td> {{$persona->nombre}}<br /></td>
+                      <td> {{$persona->apellido_paterno}}<br /></td>
+                      <td> {{$persona->apellido_materno}}<br /></td>
+                      <td> {{$persona->edad}}<br /></td>
+                      <td> {{$persona->sexo}}<br /></td>
+                      <td> {{$persona->estado_civil}}<br /></td>
                       <td>
-                          <a href="{{URL::to('edit-celular')}}/{{$celular->id}}" class="btn btn-outline-primary btn-sm">Editar</a>
+                          <a href="{{URL::to('edit-persona')}}/{{$persona->id}}" class="btn btn-outline-primary btn-sm">Editar</a>
                           |
-                          <a href="{{URL::to('delete-celular')}}/{{$celular->id}}" 
+                          <a href="{{URL::to('delete-persona')}}/{{$persona->id}}" 
                             class="btn btn-outline-danger btn-sm"
                             onclick="return checkDelete();"
                             >Eliminar</a>
