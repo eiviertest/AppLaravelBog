@@ -14,7 +14,7 @@ class CelularController extends Controller
      */
     public function index()
     {
-        $celulares = Celuar::all();
+        $celulares = Celular::all();
         return view('celular.index', compact('celulares'));
     }
 

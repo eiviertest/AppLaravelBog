@@ -141,7 +141,7 @@
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
 
                 <a class="dropdown-item" href="{{ URL::to('create-celular') }}"> Registrar un celular</a>
-                <a class="dropdown-item" href="{{ URL::to('all-celular') }}"> Lsita de celulares </a>
+                <a class="dropdown-item" href="{{ URL::to('all-celulares') }}"> Lsita de celulares </a>
 
             </div>
         </li>
