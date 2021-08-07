@@ -1,6 +1,6 @@
 @extends('layout')
 @section('dashboard-content')
-    <h1>Formulario para actualizar una persona</h1>
+    <h1>Formulario para actualizar un celular</h1>
         @if (Session::get('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert" id="gone">
                 <strong>{{Session::get('success')}}</strong>
@@ -18,51 +18,43 @@
         </div>
     @endif            
 
-        <form action="{{URL::to('update-persona-form')}}/{{$persona->id}}" method="post">
+        <form action="{{URL::to('update-celular-form')}}/{{$celular->id}}" method="post">
             @csrf
             <div class="form-group">
-              <label for="personaNombre">Nombre (s)</label>
-              <input type="text" class="form-control" id="personaNombre" 
-               placeholder="Ingrese el nombre"
-              name="personaNombre"
-              value="{{$persona->nombre}}">            
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" 
+                    placeholder="Ingrese el modelo"
+                    name="modelo"
+                    value="{{$celular->modelo}}">            
             </div>
             <div class="form-group">
-              <label for="personaApellidoP">Apellido Paterno</label>
-              <input type="text" class="form-control" id="personaApellidoP" 
-               placeholder="Ingrese el apellido paterno"
-              name="personaApellidoP"        
-              value="{{$persona->apellido_paterno}}">            
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca" 
+                    placeholder="Ingrese la marca"
+                    name="marca"       
+                    value="{{$celular->marca}}">            
             </div>
             <div class="form-group">
-              <label for="personaApellidoM">Apellido Materno</label>
-              <input type="text" class="form-control" id="personaApellidoM" 
-               placeholder="Ingrese el apellido materno"
-              name="personaApellidoM"           
-              value="{{$persona->apellido_materno}}">            
+                <label for="capacidad_bateria">Capacidad de bateria (mA)</label>
+                <input type="number" class="form-control" id="capacidad_bateria" 
+                    placeholder="Ingrese la capacidad de bateria"
+                    name="capacidad_bateria"         
+                    value="{{$celular->capacidad_bateria}}">            
             </div>
             <div class="form-group">
-              <label for="personaEstadoCivil">Estado civil</label>
-              <input type="text" class="form-control" id="personaEstadoCivil" 
-               placeholder="Ingrese el estado civil"
-              name="personaEstadoCivil"           
-              value="{{$persona->estado_civil}}">            
+                <label for="total_camaras">Total de camaras</label>
+                <input type="number" min="1" max="10" class="form-control" id="total_camaras" 
+                    placeholder="Ingrese la cantidad de camaras"
+                    name="total_camaras"          
+                    value="{{$celular->total_camaras}}">            
             </div>
             <div class="form-group">
-                <label for="inputEstadoCivil">Edad</label>
-                <input type="number" min="5" max="80" class="form-control" id="personaEdad" 
-                placeholder="Ingrese la edad"
-                name="personaEdad"
-                value="{{$persona->edad}}">
+                <label for="color">Color</label>
+                <input type="text" class="form-control" id="color" 
+                    placeholder="Ingrese el color"
+                    name="color"
+                    value="{{$celular->color}}">
             </div>
-            <div class="form-group">
-                <label for="personaSexo">Sexo</label>
-                <input type="text" class="form-control" id="personaSexo" 
-                placeholder="Ingrese el sexo"
-                name="personaSexo"
-                value="{{$persona->sexo}}">
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
-           
-          </form>
+            <button type="submit" class="btn btn-primary mt-3">Actualizar</button>
+        </form>
 @stop
